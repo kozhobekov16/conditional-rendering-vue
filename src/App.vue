@@ -1,17 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1 v-if="num === 5">Hello</h1>
+  <h1 v-else-if="num > 0">номер</h1>
+  <h1 v-else-if="num < 0">-номер</h1>
+  <h1 v-else>Не номер</h1>
+
+  <template v-if="display">
+    <h1>Zhakshylyk</h1>
+  </template>
+  <h2 v-show="show">Use v-show</h2>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      num: 4,
+      display: true,
+      show: true
+    };
+  },
+};
 </script>
 
 <style>
